@@ -48,6 +48,8 @@ class BookBDD
         return $books;
     }
 
+
+
     /**
      * Create a Book object based on a DB Row
      * @param array $row

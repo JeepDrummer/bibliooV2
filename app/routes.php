@@ -9,6 +9,7 @@
 // ---- Router ----- //
 
 // Home Page
+  // Get most popular book
 $app->get('/', function () use ($app) {
     $book = $app['bdd.book']->findAll();
     ob_start();
@@ -16,3 +17,4 @@ $app->get('/', function () use ($app) {
     $view = ob_get_clean();
     return $view;
 });
+
