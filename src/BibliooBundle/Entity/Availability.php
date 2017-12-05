@@ -9,7 +9,7 @@
 namespace BibliooBundle\Entity;
 
 
-class Disponibility
+class Availability
 {
     protected $id;
     protected $label;
