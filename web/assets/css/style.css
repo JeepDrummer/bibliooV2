@@ -1,0 +1,13 @@
+.card {
+    margin: 1rem;
+    flex-direction: row;
+}
+
+.card img{
+    max-width : 200px;
+}
+
+.btn-primary.disabled{
+    background-color: grey;
+    border-color: grey;
+}
