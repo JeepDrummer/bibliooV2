@@ -39,9 +39,11 @@ $app->get('/dashboard', function () use ($app) {
 
 //add training form
 $app->get('/add_training', function () use ($app) {
-    $book = $app['bdd.book']->findAll();
+    $book = $app['bdd.training']->findAll();
     ob_start();
     require '../src/AdminBundle/Views/addtraining.php';
     $view = ob_get_clean();
     return $view;
 });
+
+

@@ -20,3 +20,7 @@ $app->register(new \Silex\Provider\DoctrineServiceProvider());
 $app['bdd.book'] = function ($app){
     return new BookBDD($app['db']);
 };
+
+$app['bdd.training'] = function ($app){
+    return new \BibliooBundle\BDD\TrainingBDD($app['db']);
+};
