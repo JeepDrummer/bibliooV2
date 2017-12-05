@@ -11,80 +11,80 @@ class Reservation
     protected $lastname;
     protected $mail;
     protected $date_reservation;
-    protected $date_emprunt;
-    protected $date_retour;
-    protected $id_livre;
-    protected $id_revue;
-    protected $id_formation;
+    protected $date_loan;
+    protected $date_back;
+    protected $id_book;
+    protected $id_magazine;
+    protected $id_training;
     /**
      * @return mixed
      */
-    public function getIdFormation()
+    public function getIdTraining()
     {
-        return $this->id_formation;
+        return $this->id_training;
     }
     /**
-     * @param mixed $id_formation
+     * @param mixed $id_training
      */
-    public function setIdFormation($id_formation): void
+    public function setIdTraining($id_training): void
     {
-        $this->id_formation = $id_formation;
-    }
-    /**
-     * @return mixed
-     */
-    public function getIdRevue()
-    {
-        return $this->id_revue;
-    }
-    /**
-     * @param mixed $id_revue
-     */
-    public function setIdRevue($id_revue): void
-    {
-        $this->id_revue = $id_revue;
+        $this->id_training = $id_training;
     }
     /**
      * @return mixed
      */
-    public function getIdLivre()
+    public function getIdMagazine()
     {
-        return $this->id_livre;
+        return $this->id_magazine;
     }
     /**
-     * @param mixed $id_livre
+     * @param mixed $id_magazine
      */
-    public function setIdLivre($id_livre): void
+    public function setIdMagazine($id_magazine): void
     {
-        $this->id_livre = $id_livre;
-    }
-    /**
-     * @return mixed
-     */
-    public function getDateRetour()
-    {
-        return $this->date_retour;
-    }
-    /**
-     * @param mixed $date_retour
-     */
-    public function setDateRetour($date_retour): void
-    {
-        $this->date_retour = $date_retour;
+        $this->id_magazine = $id_magazine;
     }
     /**
      * @return mixed
      */
-    public function getDateEmprunt()
+    public function getIdBook()
     {
-        return $this->date_emprunt;
+        return $this->id_book;
     }
     /**
-     * @param mixed $date_emprunt
+     * @param mixed $id_book
      */
-    public function setDateEmprunt($date_emprunt): void
+    public function setIdBook($id_book): void
     {
-        $this->date_emprunt = $date_emprunt;
+        $this->id_book = $id_book;
+    }
+    /**
+     * @return mixed
+     */
+    public function getDateBack()
+    {
+        return $this->date_back;
+    }
+    /**
+     * @param mixed $date_back
+     */
+    public function setDateBack($date_back): void
+    {
+        $this->date_back = $date_back;
+    }
+    /**
+     * @return mixed
+     */
+    public function getDateLoan()
+    {
+        return $this->date_loan;
+    }
+    /**
+     * @param mixed $date_loan
+     */
+    public function setDateLoan($date_loan): void
+    {
+        $this->date_loan = $date_loan;
     }
     /**
      * @return mixed
