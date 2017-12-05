@@ -36,7 +36,7 @@ class BookBDD
      */
     public function findAll()
     {
-        $sql = "SELECT * FROM livre ORDER BY 'year' DESC";
+        $sql = "SELECT * FROM book ORDER BY 'year' DESC";
         $res = $this->db->fetchAll($sql);
         $books = array();
 
@@ -56,11 +56,11 @@ class BookBDD
     public function buildBooks(array $row)
     {
         $book = new Book();
-        $book->setId($row['id_livre']);
+        $book->setId($row['id']);
         $book->setTitle($row['title']);
         $book->setAuthor($row['author']);
         $book->setYear($row['year']);
-        $book->setExtLink($row['externel_link']);
+        $book->setExtLink($row['external_link']);
 
         return $book;
     }
