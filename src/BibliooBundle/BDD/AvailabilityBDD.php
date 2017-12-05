@@ -9,26 +9,18 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Availability;
 use Doctrine\DBAL\Connection;
 
-class AvailabilityBDD
+class AvailabilityBDD extends BddFinder
 {
-    /**
-     * database connection
-     * @var Connection
-     */
-    private $db;
 
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
 
     public function findAll()
     {
         $sql = "SELECT * FROM availability ORDER BY 'id' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $availabilitys = array();
 
         foreach ($res as $row){
@@ -39,12 +31,48 @@ class AvailabilityBDD
         return $availabilitys;
     }
 
-    public function buildAvailabilitys(array $row)
+    protected function buildObject(array $row)
     {
         $availability = new Availability();
         $availability->setId($row['id']);
         $availability->setLabel($row['label']);
 
         return $availability;
+    }
+
+    /**
+     * Returns one entry by id
+     * @param $id
+     * @return mixed
+     */
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    /**
+     * Adds a row to the database table
+     * @return mixed
+     */
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    /**
+     * Update a line in the database table
+     * @return mixed
+     */
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    /**
+     * Delete a line in the database table
+     */
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
     }
 }
