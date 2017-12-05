@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jeep
- * Date: 05/12/2017
- * Time: 10:10
- */
+
 
 namespace BibliooBundle\Entity;
 
 
 class Training
 {
+
     /**
      * Training ID
      * @var int
@@ -54,6 +50,5 @@ class Training
     {
         $this->label = $label;
     }
-
 
 }

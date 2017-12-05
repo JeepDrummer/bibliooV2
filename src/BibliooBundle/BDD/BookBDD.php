@@ -41,7 +41,7 @@ class BookBDD
         $books = array();
 
         foreach ($res as $row){
-            $bookID = $row['id_livre'];
+            $bookID = $row['id'];
             $books[$bookID] = $this->buildBooks($row);
         }
         
