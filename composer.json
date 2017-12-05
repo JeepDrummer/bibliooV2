@@ -1,0 +1,20 @@
+{
+  "name": "groupea/biblioo",
+  "description": "Gestionnaire de la bilbiothèque de documentation du CEFIM",
+  "minimum-stability": "stable",
+  "license": "GNU/GPL",
+  "authors": [
+    {
+      "name": "Groupe A - CDI 2017",
+      "email": "labo@zik-n-com.net"
+    }
+  ],
+  "require": {
+    "silex/silex": "^2.2",
+    "doctrine/dbal": "^2.6",
+    "twig/twig": "v2.4.4"
+  },
+    "autoload": {
+      "psr-4": {"": "src/"}
+    }
+}
