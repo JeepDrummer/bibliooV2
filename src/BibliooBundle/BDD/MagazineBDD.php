@@ -9,37 +9,28 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Magazine;
-use Doctrine\DBAL\Connection;
 
-class MagazineBDD
+class MagazineBDD extends BddFinder
 {
-    /**
-     * database connection
-     * @var Connection
-     */
-    private $db;
 
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
 
     public function findAll()
     {
         $sql = "SELECT * FROM magazine ORDER BY 'id' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $magazines = array();
 
         foreach ($res as $row){
             $magazineID = $row['id'];
-            $magazines[$magazineID] = $this->buildMagazines($row);
+            $magazines[$magazineID] = $this->buildObject($row);
         }
 
         return $magazines;
     }
 
-    public function buildMagazines(array $row)
+    public function buildObject(array $row)
     {
         $magazine = new Magazine();
         $magazine->setId($row['id']);
@@ -52,5 +43,41 @@ class MagazineBDD
         $magazine->setExtLink($row['external_link']);
 
         return $magazine;
+    }
+
+    /**
+     * Returns one entry by id
+     * @param $id
+     * @return mixed
+     */
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    /**
+     * Adds a row to the database table
+     * @return mixed
+     */
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    /**
+     * Update a line in the database table
+     * @return mixed
+     */
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    /**
+     * Delete a line in the database table
+     */
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
     }
 }

@@ -9,42 +9,70 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Category;
-use Doctrine\DBAL\Connection;
 
-class CategoryBDD
+class CategoryBDD extends BddFinder
 {
-
-    private $db;
-
-
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
 
 
     public function findAll()
     {
         $sql = "SELECT * FROM category ORDER BY 'label' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $categorys = array();
 
         foreach ($res as $row){
             $categoryID = $row['id'];
-            $categorys[$categoryID] = $this->buildCategorys($row);
+            $categorys[$categoryID] = $this->buildObject($row);
         }
 
         return $categorys;
     }
 
 
-    public function buildCategorys(array $row)
+    public function buildObject(array $row)
     {
         $category = new Category();
         $category->setId($row['id']);
         $category->setLabel($row['label']);
 
         return $category;
+    }
+
+    /**
+     * Returns one entry by id
+     * @param $id
+     * @return mixed
+     */
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    /**
+     * Adds a row to the database table
+     * @return mixed
+     */
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    /**
+     * Update a line in the database table
+     * @return mixed
+     */
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    /**
+     * Delete a line in the database table
+     */
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
     }
 }
