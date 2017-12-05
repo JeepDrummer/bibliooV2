@@ -9,27 +9,12 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Book;
-use Doctrine\DBAL\Connection;
 
-class BookBDD
+
+class BookBDD extends BddFinder
 {
-    /**
-     * database connection
-     * @var Connection
-     */
-    private $db;
-
-    /**
-     * BookBDD constructor.
-     * The database connection object
-     * @param Connection $db
-     */
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
-
     /**
      * Return a list of all books, sorted by publication year (most recent first)
      * @return array a list of all books
@@ -37,7 +22,7 @@ class BookBDD
     public function findAll()
     {
         $sql = "SELECT * FROM book ORDER BY 'year' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $books = array();
 
         foreach ($res as $row){
@@ -48,6 +33,25 @@ class BookBDD
         return $books;
     }
 
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
+    }
 
 
     /**
@@ -55,7 +59,7 @@ class BookBDD
      * @param array $row
      * @return Book
      */
-    public function buildBooks(array $row)
+    public function buildObject(array $row)
     {
         $book = new Book();
         $book->setId($row['id']);

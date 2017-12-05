@@ -9,37 +9,53 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Availability;
-use Doctrine\DBAL\Connection;
+use Doctrine\Common\Collections\ArrayCollection;
 
-class AvailabilityBDD
+class AvailabilityBDD extends BddFinder
 {
+
     /**
-     * database connection
-     * @var Connection
+     * Return a collection of availability
+     * @return ArrayCollection
      */
-    private $db;
-
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
-
     public function findAll()
     {
         $sql = "SELECT * FROM availability ORDER BY 'id' DESC";
-        $res = $this->db->fetchAll($sql);
-        $availabilitys = array();
+        $res = $this->getDB()->fetchAll($sql);
+        $availabilities = array();
 
         foreach ($res as $row){
             $availabilityID = $row['id'];
-            $availabilitys[$availabilityID] = $this->buildAvailabilitys($row);
+            $availabilities[$availabilityID] = $this->buildObject($row);
         }
 
-        return $availabilitys;
+        return $availabilities;
     }
 
-    public function buildAvailabilitys(array $row)
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+
+    }
+
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
+    }
+
+    protected function buildObject(array $row)
     {
         $availability = new Availability();
         $availability->setId($row['id']);
@@ -47,4 +63,5 @@ class AvailabilityBDD
 
         return $availability;
     }
+
 }

@@ -40,4 +40,6 @@ interface FinderInterface
      * Delete a line in the database table
      */
     public function deleteData($id);
+
+
 }

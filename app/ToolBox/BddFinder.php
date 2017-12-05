@@ -11,7 +11,7 @@ namespace Biblioo\ToolBox;
 
 use Doctrine\DBAL\Connection;
 
-abstract class BddFinder
+abstract class BddFinder implements FinderInterface
 {
 
     private $db;
@@ -30,7 +30,7 @@ abstract class BddFinder
      * @return mixed
      */
     protected function buildObject(array $row){
-
+        //todo: override method in subclass
     }
 
 
