@@ -17,4 +17,10 @@ $app->get('/', function () use ($app) {
     $view = ob_get_clean();
     return $view;
 });
-
+$app->get('/dashboard', function () use ($app) {
+    $book = $app['bdd.book']->findAll();
+    ob_start();
+    require '../src/AdminBundle/Views/dashboard.php';
+    $view = ob_get_clean();
+    return $view;
+});
