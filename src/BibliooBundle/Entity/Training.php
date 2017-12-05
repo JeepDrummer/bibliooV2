@@ -9,7 +9,7 @@
 namespace BibliooBundle\Entity;
 
 
-class Disponibility
+class Training
 {
     protected $id;
     protected $label;
