@@ -1,170 +1,185 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: crespeau
- * Date: 05/12/2017
- * Time: 09:52
- */
+
 
 namespace BibliooBundle\Entity;
 
 
 class Magazine
 {
-    protected $id;
-    protected $title;
-    protected $year;
-    protected $month;
-    protected $numero;
-    protected $mag_cover;
-    protected $description;
-    protected $external_link;
-    protected $id_category;
-    protected $id_disponibility;
     /**
-     * Revue constructor.
+     * Magazine ID
+     * @var int
      */
-    public function __construct()
-    {
-    }
+    private $id;
+
     /**
-     * @return mixed
+     * Magazine Title
+     * @var string
      */
-    public function getId()
+    private $title;
+
+    /**
+     * Magazine Publication Year
+     * @var int
+     */
+    private $year;
+
+    /**
+     * Magazine Publication Month
+     * @var int
+     */
+    private $month;
+
+    /**
+     * Magazine Number
+     * @var int
+     */
+    private $number;
+
+    /**
+     * Magazine Cover URL
+     * @var string (url)
+     */
+    private $magCover;
+
+    /**
+     * Magazine Description
+     * @var string
+     */
+    private $description;
+
+    /**
+     * External Link of Description Magazine
+     * @var string (url)
+     */
+    private $extLink;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
+
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
+
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
+
     /**
-     * @param mixed $title
+     * @param string $title
      */
-    public function setTitle($title)
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
+
     /**
-     * @return mixed
+     * @return int
      */
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
+
     /**
-     * @param mixed $year
+     * @param int $year
      */
-    public function setYear($year)
+    public function setYear(int $year)
     {
         $this->year = $year;
     }
+
     /**
-     * @return mixed
+     * @return int
      */
-    public function getMonth()
+    public function getMonth(): int
     {
         return $this->month;
     }
+
     /**
-     * @param mixed $month
+     * @param int $month
      */
-    public function setMonth($month)
+    public function setMonth(int $month)
     {
         $this->month = $month;
     }
+
     /**
-     * @return mixed
+     * @return int
      */
-    public function getNumero()
+    public function getNumber(): int
     {
-        return $this->numero;
+        return $this->number;
     }
+
     /**
-     * @param mixed $numero
+     * @param int $number
      */
-    public function setNumero($numero)
+    public function setNumber(int $number)
     {
-        $this->numero = $numero;
+        $this->number = $number;
     }
+
     /**
-     * @return mixed
+     * @return string
      */
-    public function getMagCover()
+    public function getMagCover(): string
     {
-        return $this->mag_cover;
+        return $this->magCover;
     }
+
     /**
-     * @param mixed $mag_cover
+     * @param string $magCover
      */
-    public function setMagCover($mag_cover)
+    public function setMagCover(string $magCover)
     {
-        $this->mag_cover = $mag_cover;
+        $this->magCover = $magCover;
     }
+
     /**
-     * @return mixed
+     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
+
     /**
-     * @param mixed $description
+     * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
+
     /**
-     * @return mixed
+     * @return string
      */
-    public function getExternalLink()
+    public function getExtLink(): string
     {
-        return $this->external_link;
+        return $this->extLink;
     }
+
     /**
-     * @param mixed $external_link
+     * @param string $extLink
      */
-    public function setExternalLink($external_link)
+    public function setExtLink(string $extLink)
     {
-        $this->external_link = $external_link;
+        $this->extLink = $extLink;
     }
-    /**
-     * @return mixed
-     */
-    public function getIdCategory()
-    {
-        return $this->id_category;
-    }
-    /**
-     * @param mixed $id_category
-     */
-    public function setIdCategory($id_category)
-    {
-        $this->id_category = $id_category;
-    }
-    /**
-     * @return mixed
-     */
-    public function getIdDisponibility()
-    {
-        return $this->id_disponibility;
-    }
-    /**
-     * @param mixed $id_disponibility
-     */
-    public function setIdDisponibility($id_disponibility)
-    {
-        $this->id_disponibility = $id_disponibility;
-    }
+
 }

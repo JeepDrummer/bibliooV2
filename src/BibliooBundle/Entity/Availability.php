@@ -1,43 +1,52 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: crespeau
- * Date: 05/12/2017
- * Time: 09:51
- */
+
 
 namespace BibliooBundle\Entity;
 
 
 class Availability
 {
-    protected $id;
-    protected $label;
+    
     /**
-     * @return mixed
+     * Availability ID
+     * @var int
      */
-    public function getId()
+    private $id;
+
+    /**
+     * Availability Label
+     * @var string
+     */
+    private $label;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
+
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id): void
+    public function setId(int $id)
     {
         $this->id = $id;
     }
+
     /**
-     * @return mixed
+     * @return string
      */
-    public function getLabel()
+    public function getLabel(): string
     {
         return $this->label;
     }
+
     /**
-     * @param mixed $label
+     * @param string $label
      */
-    public function setLabel($label): void
+    public function setLabel(string $label)
     {
         $this->label = $label;
     }
