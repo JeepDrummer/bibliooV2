@@ -9,26 +9,11 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Book;
-use Doctrine\DBAL\Connection;
 
-class BookBDD
+class BookBDD extends BddFinder
 {
-    /**
-     * database connection
-     * @var Connection
-     */
-    private $db;
-
-    /**
-     * BookBDD constructor.
-     * The database connection object
-     * @param Connection $db
-     */
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
 
     /**
      * Return a list of all books, sorted by publication year (most recent first)
@@ -37,12 +22,12 @@ class BookBDD
     public function findAll()
     {
         $sql = "SELECT * FROM book ORDER BY 'year' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $books = array();
 
         foreach ($res as $row){
             $bookID = $row['id'];
-            $books[$bookID] = $this->buildBooks($row);
+            $books[$bookID] = $this->buildObject($row);
         }
         
         return $books;
@@ -55,7 +40,7 @@ class BookBDD
      * @param array $row
      * @return Book
      */
-    public function buildBooks(array $row)
+    public function buildObject(array $row)
     {
         $book = new Book();
         $book->setId($row['id']);
@@ -67,4 +52,39 @@ class BookBDD
         return $book;
     }
 
+    /**
+     * Returns one entry by id
+     * @param $id
+     * @return mixed
+     */
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    /**
+     * Adds a row to the database table
+     * @return mixed
+     */
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    /**
+     * Update a line in the database table
+     * @return mixed
+     */
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    /**
+     * Delete a line in the database table
+     */
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
+    }
 }

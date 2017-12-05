@@ -11,7 +11,6 @@ namespace BibliooBundle\BDD;
 
 use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Availability;
-use Doctrine\DBAL\Connection;
 
 class AvailabilityBDD extends BddFinder
 {
@@ -25,7 +24,7 @@ class AvailabilityBDD extends BddFinder
 
         foreach ($res as $row){
             $availabilityID = $row['id'];
-            $availabilitys[$availabilityID] = $this->buildAvailabilitys($row);
+            $availabilitys[$availabilityID] = $this->buildObject($row);
         }
 
         return $availabilitys;

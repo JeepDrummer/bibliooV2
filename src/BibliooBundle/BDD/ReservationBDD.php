@@ -9,36 +9,29 @@
 namespace BibliooBundle\BDD;
 
 
+use Biblioo\ToolBox\BddFinder;
 use BibliooBundle\Entity\Reservation;
-use Doctrine\DBAL\Connection;
 
-class ReservationBDD
+class ReservationBDD extends BddFinder
 {
-    private $db;
-
-
-    public function __construct(Connection $db)
-    {
-        $this->db = $db;
-    }
 
 
     public function findAll()
     {
         $sql = "SELECT * FROM reservation ORDER BY 'id' DESC";
-        $res = $this->db->fetchAll($sql);
+        $res = $this->getDB()->fetchAll($sql);
         $reservations = array();
 
         foreach ($res as $row){
             $reservationID = $row['id'];
-            $reservations[$reservationID] = $this->buildReservations($row);
+            $reservations[$reservationID] = $this->buildObject($row);
         }
 
         return $reservations;
     }
 
 
-    public function buildReservations(array $row)
+    public function buildObject(array $row)
     {
         $reservation = new Reservation();
         $reservation->setId($row['id']);
@@ -50,5 +43,41 @@ class ReservationBDD
         $reservation->setMail($row['mail']);
 
         return $reservation;
+    }
+
+    /**
+     * Returns one entry by id
+     * @param $id
+     * @return mixed
+     */
+    public function findOneBy($id)
+    {
+        // TODO: Implement findOneBy() method.
+    }
+
+    /**
+     * Adds a row to the database table
+     * @return mixed
+     */
+    public function createData()
+    {
+        // TODO: Implement createData() method.
+    }
+
+    /**
+     * Update a line in the database table
+     * @return mixed
+     */
+    public function updateData($id)
+    {
+        // TODO: Implement updateData() method.
+    }
+
+    /**
+     * Delete a line in the database table
+     */
+    public function deleteData($id)
+    {
+        // TODO: Implement deleteData() method.
     }
 }
