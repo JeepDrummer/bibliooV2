@@ -64,7 +64,7 @@
                 <td>Alain Bensoussan</td>
                 <td>1998</td>
                 <td>Droit</td>
-                <td><a href="#" class="btn btn-primary btn-deep-orange">Réserver</a></td>
+                <td><a href="resbook" class="btn btn-primary btn-deep-orange">Réserver</a></td>
                 <td><select id="select">
                         <option value="valeur0">Disponible</option>
                         <option value="valeur1">Réservé</option>
@@ -78,7 +78,7 @@
                 <td>Alain Bensoussan</td>
                 <td>1998</td>
                 <td>Droit</td>
-                <td><a href="#" class="btn disabled btn-primary btn-deep-orange">Réserver</a></td>
+                <td><a href="resbook" class="btn disabled btn-primary btn-deep-orange">Réserver</a></td>
                 <td><select id="select">
                         <option value="valeur0">Disponible</option>
                         <option value="valeur1">Réservé</option>
@@ -92,7 +92,7 @@
                 <td>Alain Bensoussan</td>
                 <td>1998</td>
                 <td>Droit</td>
-                <td><a href="#" class="btn btn-primary btn-deep-orange">Réserver</a></td>
+                <td><a href="resbook" class="btn btn-primary btn-deep-orange">Réserver</a></td>
                 <td><select id="select">
                         <option value="valeur0">Disponible</option>
                         <option value="valeur1">Réservé</option>

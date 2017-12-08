@@ -22,7 +22,7 @@
                         <li>Catégorie : Droit</li>
                     </ul>
                     </p>
-                    <a href="#" class="btn btn-primary btn-deep-orange">Réserver</a>
+                    <a href="resbook" class="btn btn-primary btn-deep-orange">Réserver</a>
                 </div>
             </div>
             <!-- end new books loop -->
@@ -50,7 +50,7 @@
                         <li>Catégorie : Droit</li>
                     </ul>
                     </p>
-                    <a href="#" class="btn btn-primary btn-deep-orange">Réserver</a>
+                    <a href="resbook" class="btn btn-primary btn-deep-orange">Réserver</a>
                 </div>
             </div>
             <!-- end most reserved books loop -->
