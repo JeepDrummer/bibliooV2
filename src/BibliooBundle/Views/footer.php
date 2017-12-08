@@ -11,7 +11,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container-fluid">
-            &copy; 2017 Tous droits r&eacute;serv&eacute;s &agrave; CEFIM | 32 avenue Marcel Dassault 37200 Tours | Tel. 02-47-40-26-80 | <a href="/ml">Mentions légales</a>
+            &copy; 2017 Tous droits r&eacute;serv&eacute;s &agrave; CEFIM | 32 avenue Marcel Dassault 37200 Tours | Tel. 02-47-40-26-80 | <a href="ml">Mentions légales</a>
         </div>
     </div>
 </footer>
