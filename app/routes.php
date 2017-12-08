@@ -36,6 +36,15 @@ $app->get('/ml', function () use ($app) {
     return $view;
 });
 
+//list of all books
+$app->get('/resbook', function () use ($app) {
+    //$book = $app['bdd.book']->findAll();
+    ob_start();
+    require '../src/BibliooBundle/Views/resbook.php';
+    $view = ob_get_clean();
+    return $view;
+});
+
 //Administration routes
 //reservation dashboard
 $app->get('/dashboard', function () use ($app) {
