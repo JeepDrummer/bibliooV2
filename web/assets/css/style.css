@@ -12,3 +12,10 @@
     border-color: grey;
 }
 
+input[type=checkbox].nav-item-box {
+    margin: 0.6rem 0 0.5rem 0.5rem;
+}
+
+.img-max {
+    max-width : 50px;
+}

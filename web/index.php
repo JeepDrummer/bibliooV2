@@ -12,5 +12,5 @@ $app = new \Silex\Application();
 require __DIR__.'/../app/config/dev.php';
 require __DIR__.'/../app/app.php';
 require __DIR__.'/../app/routes.php';
-require __DIR__.'/../src/BibliooBundle/BDD/BookBDD.php';
+//require __DIR__.'/../src/BibliooBundle/BDD/BookBDD.php';
 $app->run();

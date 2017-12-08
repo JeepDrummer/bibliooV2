@@ -35,7 +35,7 @@
             <!-- most reserved books loop -->
             <div class="card">
                 <div class="view overlay hm-white-slight">
-                    <img src="./../web/assets/uploads/books/multimedia-droit.jpg" class="img-fluid" alt="">
+                    <img src="/web/assets/uploads/books/multimedia-droit.jpg" class="img-fluid" alt="">
                     <a href="#">
                         <div class="mask"></div>
                     </a>
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="mt-1 text-center">
-        <button type="button" class="btn btn-outline-warning waves-effect">Voir tous les ouvrages</button>
+        <a class="btn btn-outline-warning waves-effect" href="list">Voir tous les ouvrages</a>
     </div>
 
 
